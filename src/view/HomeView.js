@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Container, } from 'native-base';
-import { HeaderComponent } from '../components/index';
+import { HeaderComponent, CameraComponent } from '../components/index';
 
 class HomeView extends Component {
     render() {
         return (
             <Container>
-                <HeaderComponent></HeaderComponent>
+
+                <HeaderComponent />
+                <CameraComponent>
+                </CameraComponent>
             </Container>
         )
     }
