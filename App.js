@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {  Platform , StyleSheet} from 'react-native';
-import { Container, Header, Content, Button , Text} from 'native-base';
+import { Container, Content, Button , Text, Icon, Left,Body,Title} from 'native-base';
+import {HeaderComponent, FooterComponent} from './src/components';
+import HomeView from './src/view/HomeView';
+
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -12,29 +15,12 @@ const instructions = Platform.select({
 export default class App extends Component {
   render() {
     return (
-      <Container>
-        <Header />
-        <Content>
-          <Button light><Text> Light </Text></Button>
-          <Button primary><Text> Primary </Text></Button>
-          <Button success><Text> Success </Text></Button>
-          <Button info><Text> Info </Text></Button>
-          <Button warning><Text> Warning </Text></Button>
-          <Button danger><Text> Danger </Text></Button>
-          <Button dark><Text> Dark </Text></Button>
-        </Content>
-      </Container>
+      <HomeView></HomeView>
     );
   }
 }
 
 const styles = StyleSheet.create({
-
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
   instructions: {
     textAlign: 'center',
     color: '#333333',
