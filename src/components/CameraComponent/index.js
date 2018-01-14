@@ -14,7 +14,9 @@ import styles from '../styles';
 
 class CameraComponent extends Component {
   state = {
-    image: ''
+    image: '',
+    images: []
+
   }
   render() {
     return (
@@ -48,7 +50,13 @@ class CameraComponent extends Component {
     const options = {};
     //options.location = ...
     this.camera.capture({ metadata: options })
-      .then((data) => this.setState({ image: data.path }))
+      .then((data) => {
+        let temp = this.state.images;
+        temp.push(data.path);
+        this.setState({images: temp})
+        if(temp.length >= 4)        
+          this.props.nav.navigate('Stories', {images: temp})
+      })
       .catch(err => console.error(err));
   }
 }
