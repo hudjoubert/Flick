@@ -1,6 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+    content: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     capture: {
         fontSize: 50,
         color: 'white'
@@ -15,8 +19,11 @@ const styles = StyleSheet.create({
     },
     icons: {
         color: 'white'
+    },
+    myHistory: {
+        width: null,
+        height: 400,
     }
-
 });
 
 export default styles;
