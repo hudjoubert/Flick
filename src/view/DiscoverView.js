@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Container } from 'native-base';
-import { StoryComponent } from '../components/index';
+import { StoryComponent, HeaderComponent } from '../components/index';
 
 class DiscoverView extends Component {
-    state = {  }
+    state = {}
     render() {
         return (
-            <StoryComponent />
+            <Container>
+                <HeaderComponent />
+                <StoryComponent />
+            </Container>
         );
     }
 }
