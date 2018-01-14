@@ -7,15 +7,13 @@ export default class HeaderComponent extends Component {
 
 
     render() {
-        console.log(this.props);
-
         return (
             <Header style={styles.header}>
                 <Left>
                     {this.props.type === 'Camera' && (
-                        <Button transparent onPress={() => this.props.teste.navigate('Contact')}>
+                        <Button transparent onPress={() => this.props.teste.navigate('Discover')}>
                             <Icon
-                                name='add'
+                                name='images'
                                 style={styles.icons}
                             />
                         </Button>
@@ -23,7 +21,7 @@ export default class HeaderComponent extends Component {
                     {this.props.type === 'Contact' && (
                         <Button transparent onPress={() => this.props.teste.navigate('Home')}>
                             <Icon
-                                name='arrow-back'
+                                name='camera'
                                 style={styles.icons}
                             />
                         </Button>
@@ -33,7 +31,21 @@ export default class HeaderComponent extends Component {
                     <Title>Flicky</Title>
                 </Body>
                 <Right>
-                    <Icon name='menu' />
+                    {this.props.type === 'Camera' && (
+                        <Button transparent onPress={() => this.props.teste.navigate('Contact')}>
+                            <Icon
+                                name='contacts'
+                                style={styles.icons} />
+                        </Button>
+                    )}
+
+                    {this.props.type === 'Contact' && (
+                        <Button transparent onPress={() => this.props.teste.navigate('Profile')}>
+                            <Icon
+                                name='contact'
+                                style={styles.icons} />
+                        </Button>
+                    )}
                 </Right>
 
             </Header>
