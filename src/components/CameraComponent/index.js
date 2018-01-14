@@ -21,7 +21,7 @@ class CameraComponent extends Component {
           style={styles.preview}
           aspect={'fill'}
           type={'back'}
-          orientation={'auto'}>
+          orientation={'portrait'}>
           <Icon
             name='radio-button-on'
             style={styles.capture}

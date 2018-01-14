@@ -10,7 +10,8 @@
     "native-base": "^2.3.6",
     "react": "16.2.0",
     "react-native": "0.52.0",
-    "react-native-camera": "^0.12.0"
+    "react-native-camera": "^0.12.0",
+    "react-navigation": "^1.0.0-beta.26"
   },
   "devDependencies": {
     "babel-jest": "22.0.6",
