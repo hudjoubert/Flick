@@ -7,7 +7,7 @@ class DiscoverView extends Component {
     render() {
         return (
             <Container>
-                <HeaderComponent />
+                <HeaderComponent nav={this.props.navigation} type={'Discover'}/>
                 <StoryComponent />
             </Container>
         );
