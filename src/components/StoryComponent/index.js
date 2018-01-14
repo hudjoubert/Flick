@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Image } from 'react-native';
+import { ImageBackground, View } from 'react-native';
+import styles from '../styles';
 import {
     Container,
     Content,
@@ -13,19 +14,29 @@ import {
     Right
 } from 'native-base';
 
-// const cards = [
-//     {
-//         text: 'Card One',
-//         name: 'One',
-//         image: require('./img/swiper-1.png'),
-//     },
-// ];
-
 class StoryComponent extends Component {
     state = {}
     render() {
         return (
-            <Content></Content>
+            <Content>
+                <Card>
+                    <CardItem cardBody>
+                        <ImageBackground source={require('../../images/luffy2-avatar.png')} style={styles.CardImage}>
+                            <View style={styles.CardImageMargin}>
+                                <CardItem style={styles.StoryHeader}>
+                                    <Left>
+                                        <Text style={styles.StoryTitle}>titulo</Text>
+                                        <Text note style={styles.StorySubtitle}>subtitulo</Text>
+                                    </Left>
+                                    <Body>
+                                    </Body>
+                                    <Right />
+                                </CardItem>
+                            </View>
+                        </ImageBackground>
+                    </CardItem>
+                </Card>
+            </Content>
         );
     }
 }

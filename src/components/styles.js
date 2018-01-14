@@ -23,6 +23,26 @@ const styles = StyleSheet.create({
     myHistory: {
         width: null,
         height: 400,
+    },
+    CardImage: {
+        flex: 1,
+        height: 200,
+        width: null,
+    },
+    CardImageMargin: {
+        height: null,
+
+    },
+    StoryHeader: {
+        backgroundColor: 'transparent',
+    },
+    StoryTitle: {
+        color: 'white',
+        fontSize: 26,
+    },
+    StorySubtitle: {
+        color: 'white',
+        fontSize: 20,
     }
 });
 
