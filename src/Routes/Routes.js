@@ -7,7 +7,7 @@ const Routes = {
     Home: { screen: HomeView},
     Contact: { screen: ContactView},
     Profile: { screen: ProfileView},
-    Discover: { screen: DiscoverView}
+    Discover: { screen: DiscoverView},
 }
 
 export default Routes;
