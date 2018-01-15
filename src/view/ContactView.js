@@ -1,17 +1,37 @@
 import React, { Component } from 'react';
-import { Container } from 'native-base';
+import { ScrollView } from 'react-native';
+import { Container, Text } from 'native-base';
 import { ContactComponent, HeaderComponent } from '../components/index';
+import { connect } from 'react-redux';
+import { getData } from '../actions';
+
 
 class ContactView extends Component {
-    state = {  }
+    state = {}
+    componentDidMount() {
+        this.props.getData()
+    }
+
     render() {
+        const list = this.props.users.map(user => {
+            //console.log(user)
+
+            return (
+                <ContactComponent nav={this.props.navigation} key={user.id} user={user}/>
+            );
+        });
+
         return (
             <Container>
-                <HeaderComponent teste={this.props.navigation} type={'Contact'}/>
-                <ContactComponent/>
+                <HeaderComponent nav={this.props.navigation} type={'Contact'} />
+                <ScrollView>
+                    {list}
+                </ScrollView>
             </Container>
         );
     }
 }
-
-export default ContactView;
+const mapStateToProps = (state) => {
+    return { users: state.profiles.users }
+}
+export default connect(mapStateToProps, { getData })(ContactView);
