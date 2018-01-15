@@ -47,14 +47,6 @@ export default class HeaderComponent extends Component {
                                 style={styles.icons} />
                         </Button>
                     )}
-
-                    {this.props.type === 'Contact' && (
-                        <Button transparent onPress={() => this.props.nav.navigate('Profile')}>
-                            <Icon
-                                name='contact'
-                                style={styles.icons} />
-                        </Button>
-                    )}
                     
                     {this.props.type === 'Discover' && (
                         <Button transparent onPress={() => this.props.nav.navigate('Home')}>
