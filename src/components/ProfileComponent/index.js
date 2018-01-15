@@ -23,7 +23,7 @@ class ProfileComponent extends Component {
             <Content >
                 <Body>
                     <Thumbnail style={styles.thumbnail} large square source={require('../../images/luffy-avatar.png')} />
-                    <H1>Nome</H1>
+                    <H1>{this.props.user.name}</H1>
                 </Body>
                 <Card>
                     <CardItem>

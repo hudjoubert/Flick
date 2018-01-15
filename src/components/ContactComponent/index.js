@@ -19,17 +19,17 @@ class ContactComponent extends Component {
         return (
             <Content>
                 <List >
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Contact')}>
+                    <TouchableOpacity >
                         <ListItem avatar>
                             <Left>
                                 <Thumbnail source={require('../../images/luffy-avatar.png')} />
                             </Left>
                             <Body>
-                                <Text>Kumar Pratik</Text>
-                                <Text note>Doing what you like will always keep you happy . .</Text>
+                                <Text>{this.props.user.name}</Text>
+                                <Text note>{this.props.user.email}</Text>
                             </Body>
                             <Right>
-                                <Button transparent >
+                                <Button transparent onPress={() => this.props.nav.navigate('Profile', {user: this.props.user})} >
                                     <Icon name='arrow-forward' />
                                 </Button>
                             </Right>
