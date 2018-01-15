@@ -8,7 +8,7 @@ class ProfileView extends Component {
         return (
             <Container>
                 <HeaderComponent nav={this.props.navigation} type={'Profile'}/>
-                <ProfileComponent />
+                <ProfileComponent user={this.props.navigation.state.params.user} />
             </Container>
         );
     }
