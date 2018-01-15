@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import styles from '../styles'
 import {
-    Container,
     Content,
     Thumbnail,
     H1,
@@ -9,13 +9,10 @@ import {
     CardItem,
     Right,
     Left,
-    Text,
     Body,
     Button,
     Icon
 } from 'native-base';
-import styles from '../styles'
-
 
 class ProfileComponent extends Component {
     render() {

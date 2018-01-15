@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-
-import { Header, Body, Title, Icon, Left, Right, Button } from 'native-base';
 import styles from '../styles';
+import {
+    Header,
+    Body,
+    Title,
+    Icon,
+    Left,
+    Right,
+    Button
+} from 'native-base';
 
-export default class HeaderComponent extends Component {
-
+class HeaderComponent extends Component {
 
     render() {
         return (
@@ -34,7 +40,6 @@ export default class HeaderComponent extends Component {
                             />
                         </Button>
                     )}
-
                 </Left>
                 <Body>
                     <Title>Flicky</Title>
@@ -47,7 +52,7 @@ export default class HeaderComponent extends Component {
                                 style={styles.icons} />
                         </Button>
                     )}
-                    
+
                     {this.props.type === 'Discover' && (
                         <Button transparent onPress={() => this.props.nav.navigate('Home')}>
                             <Icon
@@ -55,12 +60,9 @@ export default class HeaderComponent extends Component {
                                 style={styles.icons} />
                         </Button>
                     )}
-
-
                 </Right>
-
             </Header>
         );
     }
 }
-
+export default HeaderComponent;

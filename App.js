@@ -18,13 +18,4 @@ const App = () => {
   );
 }
 
-// export default class App extends Component {
-//   render() {
-//     return (
-//       <HomeView></HomeView>
-//     );
-//   }
-// }
-
 export default App;
-

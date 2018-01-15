@@ -3,15 +3,14 @@ import { Container } from 'native-base';
 import { ProfileComponent, HeaderComponent } from '../components/index';
 
 class ProfileView extends Component {
-    state = {}
-    render() {
-        return (
-            <Container>
-                <HeaderComponent nav={this.props.navigation} type={'Profile'}/>
-                <ProfileComponent user={this.props.navigation.state.params.user} />
-            </Container>
-        );
-    }
+	render() {
+		return (
+			<Container>
+				<HeaderComponent nav={this.props.navigation} type={'Profile'} />
+				<ProfileComponent user={this.props.navigation.state.params.user} />
+			</Container>
+		);
+	}
 }
 
 export default ProfileView;

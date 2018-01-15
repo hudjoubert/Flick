@@ -13,4 +13,3 @@ export {
     StoryComponent,
     styles
 };
-
