@@ -14,6 +14,12 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center'
     },
+    CameraBar: {
+        width: 300,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+
+    },
     header: {
         backgroundColor: 'teal'
     },
