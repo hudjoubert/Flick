@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import Camera from 'react-native-camera';
 import styles from '../styles';
-import { View } from 'react-native';
+import { View, Platform } from 'react-native';
 import { Icon } from 'native-base';
 
 
@@ -14,31 +14,60 @@ class CameraComponent extends Component {
   }
 
   render() {
+    if (Platform.OS === 'android') {
+      return (
+        <Camera
+          ref={(cam) => { this.camera = cam; }}
+          style={styles.preview}
+          aspect={'fill'}
+          type={this.state.reverseCamera}
+          orientation={'auto'}
+          flashMode={this.state.flash}>
+          <View style={styles.CameraBar}>
+            <Icon
+              name='flash'
+              style={styles.capture}
+              onPress={this.switchflash} />
+            <Icon
+              name='radio-button-on'
+              style={styles.capture}
+              onPress={this.takePicture.bind(this)} />
+            <Icon
+              name='reverse-camera'
+              style={styles.capture}
+              onPress={this.switchType} />
+          </View>
+        </Camera>
+      );
+    } else {
+      return (
+        <Camera
+          ref={(cam) => { this.camera = cam; }}
+          style={styles.preview}
+          aspect={'fill'}
+          type={this.state.reverseCamera}
+          orientation={'auto'}
+          flashMode={this.state.flash}
+          captureTarget={Camera.constants.CaptureTarget.disk}>
+          <View style={styles.CameraBar}>
+            <Icon
+              name='flash'
+              style={styles.capture}
+              onPress={this.switchflash} />
+            <Icon
+              name='radio-button-on'
+              style={styles.capture}
+              onPress={this.takePicture.bind(this)} />
+            <Icon
+              name='reverse-camera'
+              style={styles.capture}
+              onPress={this.switchType} />
+          </View>
+        </Camera>
+  
+      );      
+    }
 
-    return (
-      <Camera
-        ref={(cam) => { this.camera = cam; }}
-        style={styles.preview}
-        aspect={'fill'}
-        type={this.state.reverseCamera}
-        orientation={'auto'}
-        flashMode={this.state.flash}>
-        <View style={styles.CameraBar}>
-          <Icon
-            name='flash'
-            style={styles.capture}
-            onPress={this.switchflash} />
-          <Icon
-            name='radio-button-on'
-            style={styles.capture}
-            onPress={this.takePicture.bind(this)} />
-          <Icon
-            name='reverse-camera'
-            style={styles.capture}
-            onPress={this.switchType} />
-        </View>
-      </Camera>
-    );
   }
 
   takePicture() {
