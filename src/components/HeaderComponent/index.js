@@ -60,6 +60,14 @@ class HeaderComponent extends Component {
                                 style={styles.icons} />
                         </Button>
                     )}
+                    {this.props.type === 'Stories' && (
+                        <Button transparent onPress={() => this.props.nav.navigate('Contact')}>
+                            <Icon
+                                name='contacts'
+                                style={styles.icons}
+                            />
+                        </Button>
+                    )}
                 </Right>
             </Header>
         );
