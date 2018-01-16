@@ -33,5 +33,16 @@ Para conectar a depenência da camera com o projeto é necessário executar esse
 ```
 react-native link react-native-camera
 ```
+Após a instalação basta rodar o comando a seguir com o emulador aberto ou o smartphone conectado via USB:
+
+Para IOS:
+```
+react-native run-ios
+```
+
+Para Android:
+```
+react-native run-android
+```
 
 ### Você já está pronto para usar o flick!!!
